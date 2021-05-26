@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
     <>
       <AppContainer>
         <div>
-          <Sidebar isOpen={!false} />
+          <Sidebar />
           <NavBar siteTitle={data.site.siteMetadata?.title || `Title`} />
           <main>{children}</main>
         </div>

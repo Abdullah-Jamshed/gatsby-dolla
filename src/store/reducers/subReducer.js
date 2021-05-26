@@ -1,14 +1,13 @@
 const INITIAL_STATE = {
-  a: "Abdullah",
+  isOpen: false,
 }
 
 const state = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case "A":
-      console.log(action.payload.a)
+    case "SIDEBAR_TOGGLE":
       return {
         ...state,
-        a: action.payload.a,
+        isOpen: action.payload.isOpen,
       }
     default:
       return state

@@ -1,5 +1,5 @@
-const ab = () => {
-  return { type: "A", payload: { a: "hello" } }
+const toggleSideBar = isOpen => {
+  return { type: "SIDEBAR_TOGGLE", payload: { isOpen } }
 }
 
-export { ab }
+export { toggleSideBar }

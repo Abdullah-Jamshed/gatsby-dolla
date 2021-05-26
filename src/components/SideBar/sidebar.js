@@ -1,6 +1,6 @@
 import React from "react"
-// import { useDispatch } from "react-redux"
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
+import { toggleSideBar } from "../../store/actions/action"
 import {
   CloseIcon,
   Icon,
@@ -12,22 +12,22 @@ import {
   SideBarMenu,
 } from "./SidebarElements"
 
-const Sidebar = ({ isOpen }) => {
+const Sidebar = () => {
   // REDUX STATE HOOOK
-  const data = useSelector(state => state.subReducer)
+  const { isOpen } = useSelector(state => state.subReducer)
 
   // REDUX ACTION HOOOK
-  //   const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
   return (
     <SidebarContainer isOpen={isOpen}>
       <Icon>
-        <CloseIcon />
+        <CloseIcon onClick={() => dispatch(toggleSideBar(!isOpen))} />
       </Icon>
 
       <SideBarMenu>
         <SideBarItems>
-          <SideBarLink to="about">{data.a}</SideBarLink>
+          <SideBarLink to="about">{isOpen}</SideBarLink>
         </SideBarItems>
         <SideBarItems>
           <SideBarLink to="about">About</SideBarLink>
