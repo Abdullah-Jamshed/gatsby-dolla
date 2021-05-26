@@ -10,6 +10,7 @@ import "./layout.css"
 import NavBar from "../Navbar/navbar"
 import Footer from "../Footer/footer"
 import Sidebar from "../SideBar/sidebar"
+import HeroSection from "../HeroSection/heroSection"
 
 const Layout = ({ children }) => {
   // QUERY
@@ -29,9 +30,10 @@ const Layout = ({ children }) => {
         <div>
           <Sidebar />
           <NavBar siteTitle={data.site.siteMetadata?.title || `Title`} />
+          <HeroSection />
           <main>{children}</main>
         </div>
-
+            
         <div>
           <Footer />
         </div>
