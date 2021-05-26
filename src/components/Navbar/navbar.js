@@ -21,21 +21,21 @@ const NavBar = ({ siteTitle }) => (
       </MobileIcons>
       <NavMenu>
         <NavItems>
-          <NavLink to="/about">About</NavLink>
+          <NavLink to="about">About</NavLink>
         </NavItems>
         <NavItems>
-          <NavLink to="/discover">Discover</NavLink>
+          <NavLink to="discover">Discover</NavLink>
         </NavItems>
         <NavItems>
-          <NavLink to="/services">Services</NavLink>
+          <NavLink to="services">Services</NavLink>
         </NavItems>
         <NavItems>
-          <NavLink to="/signup">SignUp</NavLink>
+          <NavLink to="signup">SignUp</NavLink>
         </NavItems>
       </NavMenu>
 
       <NavBtn>
-        <NavBtnLink to="signIn">Sign In</NavBtnLink>
+        <NavBtnLink to="/signIn">Sign In</NavBtnLink>
       </NavBtn>
     </NavContainer>
   </Nav>

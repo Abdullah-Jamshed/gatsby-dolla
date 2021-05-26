@@ -9,6 +9,7 @@ import "./layout.css"
 import NavBar from "./Navbar/navbar"
 import Footer from "./Footer/footer"
 import AppContainer from "./AppContainer"
+import Sidebar from "./SideBar/sidebar"
 
 const Layout = ({ children }) => {
   // QUERY
@@ -26,6 +27,7 @@ const Layout = ({ children }) => {
     <>
       <AppContainer>
         <div>
+          <Sidebar isOpen={!false} />
           <NavBar siteTitle={data.site.siteMetadata?.title || `Title`} />
           <main>{children}</main>
         </div>
