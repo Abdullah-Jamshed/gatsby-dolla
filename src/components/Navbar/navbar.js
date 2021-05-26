@@ -1,7 +1,6 @@
 import * as React from "react"
 import { FaBars } from "react-icons/fa"
-import { useDispatch, useSelector } from "react-redux"
-import { toggleSideBar } from "../../store/actions/action"
+
 import {
   Nav,
   NavContainer,
@@ -14,7 +13,12 @@ import {
   NavBtnLink,
 } from "./navbarElements"
 
+//  REDUX
+import { useDispatch, useSelector } from "react-redux"
+import { toggleSideBar } from "../../store/actions/action"
+
 const NavBar = ({ siteTitle }) => {
+  
   // REDUX STATE HOOOK
   const { isOpen } = useSelector(state => state.subReducer)
 

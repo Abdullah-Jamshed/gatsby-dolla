@@ -1,6 +1,4 @@
 import React from "react"
-import { useSelector, useDispatch } from "react-redux"
-import { toggleSideBar } from "../../store/actions/action"
 import {
   CloseIcon,
   Icon,
@@ -12,6 +10,11 @@ import {
   SideBarMenu,
 } from "./SidebarElements"
 
+// REDUX
+import { useSelector, useDispatch } from "react-redux"
+import { toggleSideBar } from "../../store/actions/action"
+
+
 const Sidebar = () => {
   // REDUX STATE HOOOK
   const { isOpen } = useSelector(state => state.subReducer)
@@ -19,27 +22,36 @@ const Sidebar = () => {
   // REDUX ACTION HOOOK
   const dispatch = useDispatch()
 
+  // HANDLER FUNCTION
+  const toggleHandler = () => dispatch(toggleSideBar(!isOpen))
+
   return (
     <SidebarContainer isOpen={isOpen}>
+
       <Icon>
-        <CloseIcon onClick={() => dispatch(toggleSideBar(!isOpen))} />
+        <CloseIcon onClick={toggleHandler} />
       </Icon>
 
       <SideBarMenu>
         <SideBarItems>
-          <SideBarLink to="about">{isOpen}</SideBarLink>
+          <SideBarLink onClick={toggleHandler} to="about">
+            About
+          </SideBarLink>
         </SideBarItems>
         <SideBarItems>
-          <SideBarLink to="about">About</SideBarLink>
+          <SideBarLink onClick={toggleHandler} to="discover">
+            Discover
+          </SideBarLink>
         </SideBarItems>
         <SideBarItems>
-          <SideBarLink to="discover">Discover</SideBarLink>
+          <SideBarLink onClick={toggleHandler} to="services">
+            Services
+          </SideBarLink>
         </SideBarItems>
         <SideBarItems>
-          <SideBarLink to="services">Services</SideBarLink>
-        </SideBarItems>
-        <SideBarItems>
-          <SideBarLink to="signup">SignUp</SideBarLink>
+          <SideBarLink onClick={toggleHandler} to="signup">
+            SignUp
+          </SideBarLink>
         </SideBarItems>
       </SideBarMenu>
 

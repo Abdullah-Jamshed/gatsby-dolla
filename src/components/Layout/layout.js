@@ -1,15 +1,15 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import AppContainer from "./layoutElements"
 
 // STYLES
 import "./layout.css"
 
 // COMPONENTS
-import NavBar from "./Navbar/navbar"
-import Footer from "./Footer/footer"
-import AppContainer from "./AppContainer"
-import Sidebar from "./SideBar/sidebar"
+import NavBar from "../Navbar/navbar"
+import Footer from "../Footer/footer"
+import Sidebar from "../SideBar/sidebar"
 
 const Layout = ({ children }) => {
   // QUERY
