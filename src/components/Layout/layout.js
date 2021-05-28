@@ -14,6 +14,7 @@ import HeroSection from "../HeroSection/heroSection"
 
 // FONTS
 import "@fontsource/encode-sans-expanded"
+import "@fontsource/encode-sans-expanded/700.css"
 
 
 const Layout = ({ children }) => {

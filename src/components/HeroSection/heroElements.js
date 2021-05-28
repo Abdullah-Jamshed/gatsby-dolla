@@ -6,7 +6,6 @@ export const HeroContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 30px;
-  /* height: calc(100vh - 80px); */
   /* height: 800px; */
   height: 100vh;
   position: relative;
@@ -73,6 +72,7 @@ export const HeroHeading = styled.h1`
   color: #fff;
   font-size: 48px;
   text-align: center;
+  font-weight: 700;
 
   @media screen and (max-width: 768px) {
     font-size: 40px;
