@@ -1,6 +1,4 @@
 import styled from "styled-components"
-import { Link as ScrollLink } from "react-scroll"
-import { MdArrowForward, MdKeyboardArrowRight } from "react-icons/md"
 
 export const HeroContainer = styled.div`
   background: #0c0c0c;
@@ -104,34 +102,4 @@ export const Buttonwrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
-export const Button = styled(ScrollLink)`
-  border-radius: 50px;
-  background: ${({ primary }) => (primary ? "#01bf71" : "#010606")};
-  white-space: nowrap;
-  padding: ${({ big }) => (big ? "14px 48px" : "12px 30px")};
-  color: ${({ dark }) => (dark ? "#010606" : "#fff")};
-  font-size: ${({ fontBig }) => (fontBig ? "20px" : "16px")};
-  outline: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    transition: all 0.2s ease-in-out;
-    background: ${({ primary }) => (primary ? "#fff" : "#01bf71")};
-    color: ${({ primary }) => (primary ? "#010606" : "#fff")};
-  }
-`
-
-export const ArrowForward = styled(MdArrowForward)`
-  margin-left: 8px;
-  font-size: 20px;
-`
-export const ArrowRight = styled(MdKeyboardArrowRight)`
-  margin-left: 8px;
-  font-size: 20px;
 `

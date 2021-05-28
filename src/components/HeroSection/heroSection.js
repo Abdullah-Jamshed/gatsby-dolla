@@ -8,10 +8,9 @@ import {
   HeroHeading,
   HeroParagraph,
   Buttonwrapper,
-  Button,
-  ArrowForward,
-  ArrowRight,
 } from "./heroElements"
+import { ArrowForward, ArrowRight, Button } from "../Button/Button"
+
 import { graphql, useStaticQuery } from "gatsby"
 
 // import Video from "../../videos/video.mp4"
