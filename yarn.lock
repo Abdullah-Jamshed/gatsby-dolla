@@ -1102,6 +1102,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/encode-sans-expanded@^4.4.0":
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/encode-sans-expanded/-/encode-sans-expanded-4.4.0.tgz#4fcde3ca14473c65bd4142aa95b9714ca773c54a"
+  integrity sha512-n9knaGG1NTJevO3neFqtcYMFVAD/5XrhZEB14Ff6IKFfPq1C9lDzWmSo95ZS5gDpBGt7w/RdFf+boTK18hTkdQ==
+
 "@gatsbyjs/reach-router@^1.3.6":
   version "1.3.6"
   resolved "https://registry.yarnpkg.com/@gatsbyjs/reach-router/-/reach-router-1.3.6.tgz#4e8225836959be247890b66f21a3198a0589e34d"

@@ -46,7 +46,7 @@ const HeroSection = props => {
         <Filter />
       </HeroBg>
       <HeroContent>
-        <HeroHeading>Virtual World</HeroHeading>
+        <HeroHeading>Virtual Banking Made Easy</HeroHeading>
         <HeroParagraph>
           Sign up for a new account today and receive $250 in credit toward your
           next payment

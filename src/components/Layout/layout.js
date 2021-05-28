@@ -12,6 +12,10 @@ import Footer from "../Footer/footer"
 import Sidebar from "../SideBar/sidebar"
 import HeroSection from "../HeroSection/heroSection"
 
+// FONTS
+import "@fontsource/encode-sans-expanded"
+
+
 const Layout = ({ children }) => {
   // QUERY
   const data = useStaticQuery(graphql`
