@@ -72,7 +72,6 @@ export const HeroHeading = styled.h1`
   color: #fff;
   font-size: 48px;
   text-align: center;
-  font-weight: 700;
 
   @media screen and (max-width: 768px) {
     font-size: 40px;
