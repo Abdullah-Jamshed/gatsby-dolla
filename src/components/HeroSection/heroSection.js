@@ -53,8 +53,6 @@ const HeroSection = props => {
         <Buttonwrapper>
           <Button
             to="signup"
-            // primary
-            // dark
             onMouseEnter={hoverHandler}
             onMouseLeave={hoverHandler}
           >

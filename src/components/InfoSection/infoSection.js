@@ -1,9 +1,8 @@
 import React from "react"
-import { Button } from "../Button/Button"
-
-// import { StaticImage } from "gatsby-plugin-image"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
+
+// ELEMENTS
 import {
   BtnWrap,
   Column1,
@@ -17,6 +16,7 @@ import {
   TextWrapper,
   TopLine,
 } from "./infoElements"
+import { Button } from "../Button/Button"
 
 const InfoSection = ({
   data: {
@@ -46,7 +46,9 @@ const InfoSection = ({
               <Heading lightText={lightText}>{headline}</Heading>
               <Subtitle darkText={darkText}>{description}</Subtitle>
               <BtnWrap>
-                <Button to="home">{buttonLabel}</Button>
+                <Button to="home" dark={dark.toString()} primary={primary.toString()}>
+                  {buttonLabel}
+                </Button>
               </BtnWrap>
             </TextWrapper>
           </Column1>
