@@ -1,5 +1,6 @@
-import { Link } from "gatsby"
 import styled from "styled-components"
+import { Link } from "gatsby"
+import { Link as ScrollLink } from "react-scroll"
 
 export const FooterElements = styled.footer`
   /* margin-top: 2rem; */
@@ -87,7 +88,7 @@ export const SocialMediaWrap = styled.div`
   }
 `
 
-export const SocialLogo = styled(Link)`
+export const SocialLogo = styled(ScrollLink)`
   color: #fff;
   justify-self: start;
   cursor: pointer;

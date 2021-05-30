@@ -46,7 +46,7 @@ const InfoFlex = ({
               <Subtitle darkText={darkText}>{description}</Subtitle>
               <BtnWrap>
                 <Button
-                  to="home"
+                  to="hero"
                   smooth={true}
                   duration={500}
                   spy={true}

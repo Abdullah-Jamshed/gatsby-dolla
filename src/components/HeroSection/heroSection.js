@@ -39,7 +39,7 @@ const HeroSection = props => {
   }
 
   return (
-    <HeroContainer>
+    <HeroContainer id="hero">
       <HeroBg>
         <VideoBg autoPlay loop muted src={url} type="video/mp4" />
         <Filter />
@@ -53,6 +53,11 @@ const HeroSection = props => {
         <Buttonwrapper>
           <Button
             to="signup"
+            smooth={true}
+            duration={500}
+            spy={true}
+            exact="true"
+            offset={-80}
             onMouseEnter={hoverHandler}
             onMouseLeave={hoverHandler}
           >

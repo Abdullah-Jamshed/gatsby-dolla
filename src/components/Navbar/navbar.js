@@ -1,5 +1,8 @@
-import * as React from "react"
+import React, { useState, useEffect } from "react"
+
+// ICONS
 import { FaBars } from "react-icons/fa"
+import { IconContext } from "react-icons/lib"
 
 import {
   Nav,
@@ -16,42 +19,97 @@ import {
 //  REDUX
 import { useDispatch, useSelector } from "react-redux"
 import { toggleSideBar } from "../../store/actions/action"
+import { animateScroll as scroll } from "react-scroll"
 
-const NavBar = ({ siteTitle }) => {
-  
+const NavBar = () => {
+  const [scrollNav, setScrollNav] = useState(false)
+
   // REDUX STATE HOOOK
   const { isOpen } = useSelector(state => state.subReducer)
 
   // REDUX ACTION HOOOK
   const dispatch = useDispatch()
 
-  return (
-    <Nav>
-      <NavContainer>
-        <NavLogo to="/">Dolla</NavLogo>
-        <MobileIcons onClick={() => dispatch(toggleSideBar(!isOpen))}>
-          <FaBars />
-        </MobileIcons>
-        <NavMenu>
-          <NavItems>
-            <NavLink to="about">About</NavLink>
-          </NavItems>
-          <NavItems>
-            <NavLink to="discover">Discover</NavLink>
-          </NavItems>
-          <NavItems>
-            <NavLink to="services">Services</NavLink>
-          </NavItems>
-          <NavItems>
-            <NavLink to="signup">SignUp</NavLink>
-          </NavItems>
-        </NavMenu>
+  // HANDLER FUNCTIONS
+  const changeNav = () => {
+    if (window.scrollY >= 80) {
+      setScrollNav(true)
+    } else {
+      setScrollNav(false)
+    }
+  }
 
-        <NavBtn>
-          <NavBtnLink to="/signIn">Sign In</NavBtnLink>
-        </NavBtn>
-      </NavContainer>
-    </Nav>
+  useEffect(() => {
+    window.addEventListener("scroll", changeNav)
+  }, [])
+
+  return (
+    <IconContext.Provider value={{ color: "#fff" }}>
+      <Nav scrollNav={scrollNav}>
+        <NavContainer>
+          <NavLogo to="/" onClick={() => scroll.scrollToTop()}>
+            Dolla
+          </NavLogo>
+          <MobileIcons onClick={() => dispatch(toggleSideBar(!isOpen))}>
+            <FaBars />
+          </MobileIcons>
+          <NavMenu>
+            <NavItems>
+              <NavLink
+                to="about"
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact="true"
+                offset={-80}
+              >
+                About
+              </NavLink>
+            </NavItems>
+            <NavItems>
+              <NavLink
+                to="discover"
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact="true"
+                offset={-80}
+              >
+                Discover
+              </NavLink>
+            </NavItems>
+            <NavItems>
+              <NavLink
+                to="services"
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact="true"
+                offset={-80}
+              >
+                Services
+              </NavLink>
+            </NavItems>
+            <NavItems>
+              <NavLink
+                to="signup"
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact="true"
+                offset={-80}
+              >
+                SignUp
+              </NavLink>
+            </NavItems>
+          </NavMenu>
+
+          <NavBtn>
+            <NavBtnLink to="/signIn">Sign In</NavBtnLink>
+          </NavBtn>
+        </NavContainer>
+      </Nav>
+    </IconContext.Provider>
   )
 }
 

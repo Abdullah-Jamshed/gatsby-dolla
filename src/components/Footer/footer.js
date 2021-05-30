@@ -64,7 +64,16 @@ const Footer = () => {
         </FooterLinksContainer>
         <SocialMedia>
           <SocialMediaWrap>
-            <SocialLogo to="/">DOLLA</SocialLogo>
+            <SocialLogo
+              to="hero"
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact="true"
+              offset={-80}
+            >
+              DOLLA
+            </SocialLogo>
             <WebsiteRights>
               DOLLA © {new Date().getFullYear()} All rights reserved.
             </WebsiteRights>

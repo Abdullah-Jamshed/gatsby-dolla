@@ -34,6 +34,7 @@ const ServicesSection = () => {
           }
           heading
           description
+          imgAlt
         }
       }
     }
@@ -48,7 +49,7 @@ const ServicesSection = () => {
             <ImgWrap>
               <GatsbyImage
                 image={getImage(data.image.gatsbyImageData)}
-                alt={"data.imgAlt"}
+                alt={data.imgAlt}
               />
             </ImgWrap>
             <ServicesH2>{data.heading}</ServicesH2>
