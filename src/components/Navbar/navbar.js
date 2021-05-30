@@ -46,7 +46,8 @@ const NavBar = ({ pageName }) => {
     } else {
       window.addEventListener("scroll", changeNav)
     }
-  }, [])
+    // eslint-disable-next-line
+  }, [pageName])
 
   return (
     <IconContext.Provider value={{ color: "#fff" }}>

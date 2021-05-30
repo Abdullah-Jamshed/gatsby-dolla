@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { Link } from "gatsby"
 import { Link as ScrollLink } from "react-scroll"
 
 export const FooterElements = styled.footer`

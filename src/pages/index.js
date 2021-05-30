@@ -11,7 +11,7 @@ import Seo from "../components/seo"
 const IndexPage = ({ data: { allContentfulInfoSection: info } }) => {
   return (
     <Layout pageName={"home"}>
-      <Seo title="Home" />
+      <Seo title="Dolla" />
       <HeroSection />
       {info.nodes.map(data => (
         <InfoFlex key={data.infoSectionID} data={data} />

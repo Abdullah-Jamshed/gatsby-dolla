@@ -17,11 +17,12 @@ import { graphql, useStaticQuery } from "gatsby"
 
 const ServicesSection = () => {
   const {
-    contentfulServicesSection: { bgColor, sectionHeading },
+    contentfulSection: { bgColor, sectionHeading },
     allContentfulService: { nodes },
   } = useStaticQuery(graphql`
     {
-      contentfulServicesSection(sectionId: { eq: "services" }) {
+      
+      contentfulSection(sectionId: { eq: "services" }) {
         bgColor
         sectionHeading
       }
