@@ -12,8 +12,8 @@ import {
   NavItems,
   NavLink,
   MobileIcons,
-  NavBtn,
-  NavBtnLink,
+  // NavBtn,
+  // NavBtnLink,
 } from "./navbarElements"
 
 //  REDUX
@@ -21,7 +21,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { toggleSideBar } from "../../store/actions/action"
 import { animateScroll as scroll } from "react-scroll"
 
-const NavBar = () => {
+const NavBar = ({ pageName }) => {
   const [scrollNav, setScrollNav] = useState(false)
 
   // REDUX STATE HOOOK
@@ -35,12 +35,17 @@ const NavBar = () => {
     if (window.scrollY >= 80) {
       setScrollNav(true)
     } else {
+      console.log("44", pageName)
       setScrollNav(false)
     }
   }
 
   useEffect(() => {
-    window.addEventListener("scroll", changeNav)
+    if (pageName !== "home") {
+      setScrollNav(true)
+    } else {
+      window.addEventListener("scroll", changeNav)
+    }
   }, [])
 
   return (
@@ -50,63 +55,68 @@ const NavBar = () => {
           <NavLogo to="/" onClick={() => scroll.scrollToTop()}>
             Dolla
           </NavLogo>
-          <MobileIcons onClick={() => dispatch(toggleSideBar(!isOpen))}>
-            <FaBars />
-          </MobileIcons>
-          <NavMenu>
-            <NavItems>
-              <NavLink
-                to="about"
-                smooth={true}
-                duration={500}
-                spy={true}
-                exact="true"
-                offset={-80}
-              >
-                About
-              </NavLink>
-            </NavItems>
-            <NavItems>
-              <NavLink
-                to="discover"
-                smooth={true}
-                duration={500}
-                spy={true}
-                exact="true"
-                offset={-80}
-              >
-                Discover
-              </NavLink>
-            </NavItems>
-            <NavItems>
-              <NavLink
-                to="services"
-                smooth={true}
-                duration={500}
-                spy={true}
-                exact="true"
-                offset={-80}
-              >
-                Services
-              </NavLink>
-            </NavItems>
-            <NavItems>
-              <NavLink
-                to="signup"
-                smooth={true}
-                duration={500}
-                spy={true}
-                exact="true"
-                offset={-80}
-              >
-                SignUp
-              </NavLink>
-            </NavItems>
-          </NavMenu>
 
-          <NavBtn>
+          {pageName === "home" && (
+            <>
+              <MobileIcons onClick={() => dispatch(toggleSideBar(!isOpen))}>
+                <FaBars />
+              </MobileIcons>
+              <NavMenu>
+                <NavItems>
+                  <NavLink
+                    to="about"
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    exact="true"
+                    offset={-80}
+                  >
+                    About
+                  </NavLink>
+                </NavItems>
+                <NavItems>
+                  <NavLink
+                    to="discover"
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    exact="true"
+                    offset={-80}
+                  >
+                    Discover
+                  </NavLink>
+                </NavItems>
+                <NavItems>
+                  <NavLink
+                    to="services"
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    exact="true"
+                    offset={-80}
+                  >
+                    Services
+                  </NavLink>
+                </NavItems>
+                <NavItems>
+                  <NavLink
+                    to="signup"
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    exact="true"
+                    offset={-80}
+                  >
+                    SignUp
+                  </NavLink>
+                </NavItems>
+              </NavMenu>
+            </>
+          )}
+
+          {/* <NavBtn>
             <NavBtnLink to="/signIn">Sign In</NavBtnLink>
-          </NavBtn>
+          </NavBtn> */}
         </NavContainer>
       </Nav>
     </IconContext.Provider>

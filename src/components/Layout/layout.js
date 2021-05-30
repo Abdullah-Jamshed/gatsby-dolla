@@ -14,27 +14,16 @@ import Sidebar from "../SideBar/sidebar"
 // FONTS
 import "@fontsource/encode-sans-expanded"
 
-const Layout = ({ children }) => {
-  // QUERY
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
+const Layout = ({ children, pageName }) => {
   return (
     <>
       <AppContainer>
         <div>
           <Sidebar />
-          <NavBar siteTitle={data.site.siteMetadata?.title || `Title`} />
+          <NavBar pageName={pageName} />
           <main>{children}</main>
         </div>
-            
+
         <div>
           <Footer />
         </div>

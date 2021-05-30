@@ -2,8 +2,8 @@ import React from "react"
 import {
   CloseIcon,
   Icon,
-  SideBarBtn,
-  SideBarBtnLink,
+  // SideBarBtn,
+  // SideBarBtnLink,
   SidebarContainer,
   SideBarItems,
   SideBarLink,
@@ -13,7 +13,6 @@ import {
 // REDUX
 import { useSelector, useDispatch } from "react-redux"
 import { toggleSideBar } from "../../store/actions/action"
-
 
 const Sidebar = () => {
   // REDUX STATE HOOOK
@@ -27,7 +26,6 @@ const Sidebar = () => {
 
   return (
     <SidebarContainer isOpen={isOpen}>
-
       <Icon>
         <CloseIcon onClick={toggleHandler} />
       </Icon>
@@ -55,9 +53,9 @@ const Sidebar = () => {
         </SideBarItems>
       </SideBarMenu>
 
-      <SideBarBtn>
+      {/* <SideBarBtn>
         <SideBarBtnLink to="/signIn">Sign In</SideBarBtnLink>
-      </SideBarBtn>
+      </SideBarBtn> */}
     </SidebarContainer>
   )
 }

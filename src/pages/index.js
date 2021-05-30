@@ -10,7 +10,7 @@ import Seo from "../components/seo"
 
 const IndexPage = ({ data: { allContentfulInfoSection: info } }) => {
   return (
-    <Layout>
+    <Layout pageName={"home"}>
       <Seo title="Home" />
       <HeroSection />
       {info.nodes.map(data => (
