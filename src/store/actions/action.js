@@ -1,5 +1,3 @@
-const toggleSideBar = isOpen => {
+export const toggleSideBar = isOpen => {
   return { type: "SIDEBAR_TOGGLE", payload: { isOpen } }
 }
-
-export { toggleSideBar }
