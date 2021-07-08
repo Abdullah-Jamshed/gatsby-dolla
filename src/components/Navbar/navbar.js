@@ -35,7 +35,6 @@ const NavBar = ({ pageName }) => {
     if (window.scrollY >= 80) {
       setScrollNav(true)
     } else {
-      console.log("44", pageName)
       setScrollNav(false)
     }
   }
